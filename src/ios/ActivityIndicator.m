@@ -29,7 +29,7 @@
 		[self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 		return;
 	}
-	[self.activityIndicator hide:YES];
+	[MBProgressHUD hideHUDForView:self.webView.superview animated:YES]; self.activityIndicator = nil;
     CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@""];
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
